@@ -8,3 +8,9 @@
 .body {
   padding: 0;
 }
+
+@media only screen and (max-width: 600px) {
+  .fix2 {
+    padding: 0;
+  }
+}

@@ -17,3 +17,13 @@ a {
 .menu i {
   margin-right: 10px;
 }
+
+@media only screen and (max-width: 600px) {
+  .logo {
+    margin: 0 !important;
+  }
+
+  .logobase {
+    margin-bottom: 10px;
+  }
+}

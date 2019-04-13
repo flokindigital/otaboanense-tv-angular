@@ -48,3 +48,27 @@ p {
   line-height: 1.5em;
   font-weight: 100;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .body {
+    padding: 10px 0;
+  }
+
+  .base {
+    padding: 0;
+  }
+
+  .base2 {
+    padding: 0;
+  }
+
+  .base3 {
+    padding: 1em 1em 0 2em;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-top: 1em;
+  }
+}

@@ -1,6 +1,6 @@
 <div class="body col-12 row justify-content-center">
-  <div class="col-10 row justify-content-between">
-    <div class="col-8">
+  <div class="col-12 col-sm-10 row justify-content-between base">
+    <div class="col-12 col-sm-8 base2">
       <div class="video-container">
 
         <iframe width="800" height="450"
@@ -11,7 +11,7 @@
 
 
     </div>
-    <div class="col-4 text-left">
+    <div class="col-12 col-sm-4 text-left base3">
       <h1>{{ (movieHighlight | async)?.name }}</h1>
       <h4 class="date">{{ (movieHighlight | async)?.date }}</h4>
       <p>{{ (movieHighlight | async)?.description }}</p>
