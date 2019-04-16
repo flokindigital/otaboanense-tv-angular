@@ -1,9 +1,9 @@
 <div class="body col-12 row justify-content-center">
-  <div class="col-12 col-sm-10 row justify-content-between base">
-    <div class="col-12 col-sm-8 base2">
+  <div class="col-12 col-sm-11 row justify-content-between base">
+    <div class="col-12 col-sm-9 base2">
       <div class="video-container">
 
-        <iframe width="800" height="450"
+        <iframe width="800" height="450" *ngIf="movieHighlight != null"
           [src]="sanitizer.bypassSecurityTrustResourceUrl((movieHighlight | async)?.url+ '?autoplay=1&rel=0') "
           frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
@@ -11,7 +11,7 @@
 
 
     </div>
-    <div class="col-12 col-sm-4 text-left base3">
+    <div class="col-12 col-sm-3 text-left base3">
       <h1>{{ (movieHighlight | async)?.name }}</h1>
       <h4 class="date">{{ (movieHighlight | async)?.date }}</h4>
       <p>{{ (movieHighlight | async)?.description }}</p>
