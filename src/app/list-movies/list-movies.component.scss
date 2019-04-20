@@ -1,6 +1,6 @@
 .card {
   margin: .5em;
-  width: 15.45rem;
+  width: 16rem;
   border: none;
   transition: all 0.5s;
   height: 470px;
@@ -60,4 +60,12 @@
 
 .card-footer {
   background: white;
+}
+
+.card {
+  // filter: grayscale(1);
+}
+
+.card:hover {
+  filter: grayscale(0);
 }

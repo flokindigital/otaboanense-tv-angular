@@ -58,15 +58,10 @@ export class PlayerComponent implements OnInit {
   }
 
   public changePlayer(movie) {
-    console.log('movie completo', movie);
     this.itemsCollection = this.afs.doc<Movie>('movies/' + movie.id);
     this.movieHighlight = this.itemsCollection.valueChanges();
     this.movieHighlight.subscribe(val => {
       this.movieHOME = val;
     });
-  }
-
-  public static test() {
-    console.log('clucou test');
   }
 }

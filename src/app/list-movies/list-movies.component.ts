@@ -36,9 +36,7 @@ export class ListMoviesComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-    console.log('movies', this.items);
-  }
+  ngOnInit() {}
 
   showMovie(item) {
     event.stopPropagation();

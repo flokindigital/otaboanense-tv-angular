@@ -12,7 +12,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(public homeService: HomeService) {
     this.home = homeService.homeFull;
-    console.log('VER ---------->', this.home);
   }
 
   ngOnInit() {

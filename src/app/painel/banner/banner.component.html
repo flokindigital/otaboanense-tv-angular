@@ -1,0 +1,35 @@
+<div class="container h-100">
+  <div class="row justify-content-center align-items-center h-100">
+    <div class="col-10">
+      <h1>Alteração de Banners</h1>
+      <div *ngIf="home != null" class="blockBanner">
+        <h4>Banner Topo</h4>
+        <div class="form-group" *ngIf="home != null">
+          <label for="top_url">Image URL</label>
+          <input type="text" [(ngModel)]="home.banner_top_image" value="" id="top_url" class="form-control"
+            placeholder="url do banner do topo" [ngModelOptions]="{standalone: true}" required>
+        </div>
+        <div class="form-group">
+          <label for="top_url">Link URL</label>
+          <input type="text" [(ngModel)]="home.banner_top_url" id="top_url" class="form-control"
+            placeholder="url do link do banner do topo" [ngModelOptions]="{standalone: true}" required>
+        </div>
+      </div>
+
+      <div *ngIf="home != null" class="blockBanner">
+        <h4>Banner Meio</h4>
+        <div class="form-group" *ngIf="home != null">
+          <label for="top_url">Image URL</label>
+          <input type="text" [(ngModel)]="home.banner_middle_image" value="" id="top_url" class="form-control"
+            placeholder="url do banner do meio" [ngModelOptions]="{standalone: true}" required>
+        </div>
+        <div class="form-group">
+          <label for="top_url">Link URL</label>
+          <input type="text" [(ngModel)]="home.banner_middle_link" id="top_url" class="form-control"
+            placeholder="url do link do banner do meio" [ngModelOptions]="{standalone: true}" required>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="updateBanner();">Alterar</button>
+    </div>
+  </div>
+</div>
