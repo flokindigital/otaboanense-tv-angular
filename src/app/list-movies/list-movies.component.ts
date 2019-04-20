@@ -26,7 +26,9 @@ export class ListMoviesComponent implements OnInit {
   items: Observable<Movie[]>;
 
   constructor(private afs: AngularFirestore, private homeService: HomeService) {
-    this.itemsCollection = afs.collection<Movie>('movies');
+    this.itemsCollection = afs.collection<Movie>('movies', ref =>
+      ref.orderBy('order', 'desc')
+    );
     this.items = this.itemsCollection.snapshotChanges().map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data() as Movie;
