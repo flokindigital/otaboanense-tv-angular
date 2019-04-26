@@ -1,6 +1,6 @@
 <div class="container-fluid" style="margin-bottom:3em;" *ngIf="news != null">
   <div class="row justify-content-center">
-    <div class="col-10">
+    <div class="col-12">
       <div class="row title">
         <div class="col-sm-3 col-12">
           <img src="https://www.otaboanense.com.br/wp-content/themes/otaboanense/dist/images/logo2019.svg?t=1555724376"
@@ -19,7 +19,7 @@
           <div *ngIf="item.status == 'publish'">
             <a [href]="item.link" target="_blank">
               <img class="card-img-top" *ngIf="item._embedded['wp:featuredmedia']['0'].source_url != null"
-                [src]="item._embedded['wp:featuredmedia']['0'].source_url" style="height:145px; width:227px;">
+                [src]="item._embedded['wp:featuredmedia']['0'].source_url">
               <div class="card-body">
                 <h5 class="card-title">{{item.title.rendered}}</h5>
               </div>
