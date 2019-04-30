@@ -22,6 +22,7 @@ import { HomeService } from './services/home.service';
 import { P404Component } from './p404/p404.component';
 import { DestaqueComponent } from './painel/destaque/destaque.component';
 import { NewsComponent } from './news/news.component';
+import { AdsenseModule } from 'ng2-adsense';
 
 const appRoutes: Routes = [
   { path: 'painel/banner', component: BannerComponent },
@@ -50,7 +51,11 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot(appRoutes, { enableTracing: false }),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AdsenseModule.forRoot({
+      adClient: 'ca-pub-5073402446734231',
+      adSlot: 8385261178,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

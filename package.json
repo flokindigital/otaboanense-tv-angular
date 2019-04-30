@@ -22,6 +22,7 @@
     "@angular/router": "~7.2.0",
     "core-js": "^2.5.4",
     "firebase": "^5.9.4",
+    "ng2-adsense": "^5.4.2",
     "rxjs": "^6.4.0",
     "rxjs-compat": "^6.4.0",
     "sweetalert2": "^8.8.5",
