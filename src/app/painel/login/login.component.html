@@ -1,0 +1,21 @@
+<div class="container login-container">
+  <div class="row justify-content-center">
+
+    <div class="col-md-6 login-form-2">
+      <h3>Login TV TABOANENSE</h3>
+      <form>
+        <div class="form-group">
+          <input type="text" [(ngModel)]="user.email" class="form-control" placeholder="Email" value="" name="email" />
+        </div>
+        <div class="form-group">
+          <input type="password" [(ngModel)]="user.password" class="form-control" placeholder="Senha" value=""
+            name="password" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" (click)="submit();" value="Login">Entrar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

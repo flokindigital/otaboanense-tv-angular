@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user.service';
 import { HomeService } from './../../services/home.service';
 import { Component, OnInit } from '@angular/core';
 import {
@@ -14,7 +15,11 @@ import { Home } from './../../home';
 })
 export class BannerComponent implements OnInit {
   home: Home;
-  constructor(private afs: AngularFirestore, public homeService: HomeService) {}
+  constructor(
+    private afs: AngularFirestore,
+    public homeService: HomeService,
+    public userService: UserService
+  ) {}
 
   ngOnInit() {
     this.homeService.HomeEvent.subscribe((home: Home) => {

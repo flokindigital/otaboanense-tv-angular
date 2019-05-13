@@ -1,0 +1,25 @@
+.header {
+  background: white;
+  padding: 1em;
+  margin: 0;
+}
+
+.header h1 {
+  font-size: 1em;
+}
+
+.bodyVideos {
+  margin: 1em;
+}
+
+.card-columns {
+  column-count: 5;
+}
+
+.card {
+  // margin: .5em;
+  // width: 16rem;
+  border: none;
+  transition: all 0.5s;
+  // height: 470px;
+}
