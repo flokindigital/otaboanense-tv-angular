@@ -30,6 +30,7 @@ import { LoginComponent } from './painel/login/login.component';
 import { HomeService } from './services/home.service';
 import { UserService } from './services/user.service';
 import { EditarComponent } from './painel/video/editar/editar.component';
+import { LogoutComponent } from './painel/logout/logout.component';
 
 const appRoutes: Routes = [
   { path: 'painel/banner', component: BannerComponent },
@@ -37,6 +38,7 @@ const appRoutes: Routes = [
   { path: 'painel/videos', component: VideosComponent },
   { path: 'painel/video/editar', component: EditarComponent },
   { path: 'painel/video/novo', component: EditarComponent },
+  { path: 'painel/sair', component: LogoutComponent },
   { path: '', component: FrontendComponent },
   { path: '**', component: P404Component }
 ];
@@ -56,7 +58,8 @@ const appRoutes: Routes = [
     NewsComponent,
     LoginComponent,
     VideosComponent,
-    EditarComponent
+    EditarComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

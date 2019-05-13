@@ -35,5 +35,10 @@ export class VideosComponent implements OnInit {
     this.router.navigate(['painel/video/novo']);
   }
 
+  logout() {
+    this.userService.logout();
+    this.router.navigate(['painel/videos']);
+  }
+
   remove(video) {}
 }
