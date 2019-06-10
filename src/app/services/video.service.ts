@@ -59,4 +59,15 @@ export class VideoService {
       .set(video)
       .then(video => this.router.navigate(['/painel/videos']));
   }
+
+  getVideoHome() {
+    return this.afs.doc<any>('home/mASRjAsNATTfPenPzpZI').valueChanges();
+  }
+
+  updateHome(videoHome: string) {
+    this.afs.doc<any>('home/mASRjAsNATTfPenPzpZI').update({ 'highlihgt': videoHome }).then(success => {
+      Swal.fire('Sucesso', 'Home atualizada com sucesso', 'success');
+    }
+    )
+  }
 }

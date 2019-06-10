@@ -11,20 +11,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./videos.component.scss']
 })
 export class VideosComponent implements OnInit {
-  videos: Video[];
+  videos: Observable<Video[]>;
+  videoHome: string;
 
   constructor(
     public userService: UserService,
     public videoService: VideoService,
     public router: Router
   ) {
-    this.videoService.getVideos().subscribe(video => {
-      this.videos = video;
-      console.log('VIDEOS', this.videos);
+    this.videos = this.videoService.getVideos();
+    this.videoService.getVideoHome().subscribe(data => {
+      this.videoHome = data.highlihgt;
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   edit(video) {
     this.videoService.videoEdit = video;
@@ -40,5 +41,9 @@ export class VideosComponent implements OnInit {
     this.router.navigate(['painel/videos']);
   }
 
-  remove(video) {}
+  remove(video) { }
+
+  updateHome() {
+    this.videoService.updateHome(this.videoHome);
+  }
 }

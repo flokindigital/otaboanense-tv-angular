@@ -27,7 +27,7 @@ export class ListMoviesComponent implements OnInit {
 
   constructor(private afs: AngularFirestore, private homeService: HomeService) {
     this.itemsCollection = afs.collection<Movie>('movies', ref =>
-      ref.orderBy('order', 'asc')
+      ref.orderBy('order', 'desc')
     );
 
     this.items = this.itemsCollection.snapshotChanges().map(actions => {
@@ -39,7 +39,7 @@ export class ListMoviesComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   showMovie(item) {
     event.stopPropagation();

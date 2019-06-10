@@ -1,7 +1,7 @@
 <h2 class="col-12 title">
   Confira nossos outros vídeos
 </h2>
-<div class="card-columns">
+<div class="card-deck">
   <div class="card" *ngFor="let item of items | async">
     <a href="#" (click)="showMovie(item);">
       <img class="card-img-top" src="https://img.youtube.com/vi/{{item.youtubeid}}/0.jpg" alt="Card image cap">
