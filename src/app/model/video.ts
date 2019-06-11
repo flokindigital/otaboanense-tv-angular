@@ -4,6 +4,6 @@ export interface Video {
   url: string;
   date: string;
   youtubeid: string;
-  order: string;
+  order: number;
   id: string;
 }

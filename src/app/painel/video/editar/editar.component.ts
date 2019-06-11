@@ -17,10 +17,10 @@ export class EditarComponent implements OnInit {
       this.video = {
         name: '',
         description: '',
-        order: '',
+        order: (1000 + (new Date().getUTCMilliseconds())),
         date: '',
         youtubeid: '',
-        id: '',
+        id: this.uuidv4(),
         url: ''
       };
     }

@@ -19,7 +19,7 @@ export class VideoService {
   private _videoEdit: Video;
 
   constructor(public afs: AngularFirestore, public router: Router) {
-    this.videosCollection = this.afs.collection<Video>('movies');
+    this.videosCollection = this.afs.collection<Video>('movies', ref => ref.orderBy('order', 'desc'));
     // this.videos = this.videosCollection.valueChanges();
     this.videos = this.videosCollection.snapshotChanges().map(videos => {
       return videos.map(a => {
