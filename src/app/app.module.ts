@@ -31,6 +31,7 @@ import { HomeService } from './services/home.service';
 import { UserService } from './services/user.service';
 import { EditarComponent } from './painel/video/editar/editar.component';
 import { LogoutComponent } from './painel/logout/logout.component';
+import { TestComponent } from './test/test.component';
 
 const appRoutes: Routes = [
   { path: 'painel/banner', component: BannerComponent },
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
   { path: 'painel/video/editar', component: EditarComponent },
   { path: 'painel/video/novo', component: EditarComponent },
   { path: 'painel/sair', component: LogoutComponent },
+  { path: 'testandotudo/ola', component: TestComponent },
   { path: '', component: FrontendComponent },
   { path: '**', component: P404Component }
 ];
@@ -59,7 +61,8 @@ const appRoutes: Routes = [
     LoginComponent,
     VideosComponent,
     EditarComponent,
-    LogoutComponent
+    LogoutComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
@@ -77,4 +80,4 @@ const appRoutes: Routes = [
   providers: [UserService, HomeService, AngularFireAuth],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
