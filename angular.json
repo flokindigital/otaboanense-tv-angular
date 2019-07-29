@@ -23,7 +23,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              "google317911e7f049b8f6.html",
+              "src/google317911e7f049b8f6.html",
               "src/favicon.ico",
               "src/assets",
               "src/_redirects"
