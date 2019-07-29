@@ -2,6 +2,11 @@ import { Video } from './../../../model/video';
 import { VideoService } from './../../../services/video.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClientModule, HttpClientJsonpModule, HttpClient } from '@angular/common/http';
+import { YoutubeAPI } from 'src/app/model/youtube';
+import { formatDate } from '@angular/common';
+
+const API = "https://noembed.com/embed?url=https://www.youtube.com/watch?v=";
 
 @Component({
   selector: 'SPA-editar',
@@ -11,7 +16,13 @@ import { Router } from '@angular/router';
 export class EditarComponent implements OnInit {
   video: Video;
 
-  constructor(public videoService: VideoService, public router: Router) {
+
+
+  constructor(public videoService: VideoService,
+    public router: Router,
+    public http: HttpClient) {
+
+
     this.video = videoService.videoEdit;
     if (this.video == null) {
       this.video = {
@@ -26,6 +37,14 @@ export class EditarComponent implements OnInit {
     }
 
     console.log('VER VIDEO', this.video);
+  }
+
+  getVideoAPI() {
+    this.http.jsonp<YoutubeAPI>(API + this.video.youtubeid, 'callback').subscribe(value => {
+      this.video.name = value.title;
+      this.video.description = value.author_name;
+      this.video.date = "Publicado em " + formatDate(new Date(), 'dd/MM/yyyy', 'en');
+    });
   }
 
   save() {

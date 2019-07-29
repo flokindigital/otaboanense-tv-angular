@@ -19,7 +19,7 @@
           <div class="form-group">
             <label for="name"><strong>YoutubeID</strong></label>
             <input type="text" class="form-control" id="youtubeid" placeholder="Id do Youtube"
-              [(ngModel)]="video.youtubeid" name="youtubeid" required>
+              [(ngModel)]="video.youtubeid" name="youtubeid" required (change)="getVideoAPI()">
           </div>
 
           <div class="form-group">

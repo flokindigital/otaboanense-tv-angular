@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -75,6 +75,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, { enableTracing: false }),
     FormsModule,
     HttpClientModule,
+    HttpClientJsonpModule,
     AdsenseModule.forRoot({
       adClient: 'ca-pub-5073402446734231',
       adSlot: 8385261178
