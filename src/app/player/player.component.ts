@@ -7,6 +7,7 @@ import {
   AngularFirestoreDocument
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { Video } from '../model/video';
 
 export interface Movie {
   name: string;
@@ -34,6 +35,7 @@ export class PlayerComponent implements OnInit {
   movieHOME: any;
 
   @Input() movie: any;
+  @Input() videoplayer: any;
 
   constructor(
     private afs: AngularFirestore,
@@ -43,9 +45,11 @@ export class PlayerComponent implements OnInit {
     this.itemDoc = this.afs.doc<Home>('home/' + this.homeService.getHOME());
     this.item = this.itemDoc.valueChanges();
     this.item.subscribe(val => {
-      this.itemsCollection = this.afs.doc<Movie>('movies/' + val.highlihgt);
+
+      this.itemsCollection = this.afs.doc<Movie>('movies/' + (this.videoplayer != null ? this.videoplayer : val.highlihgt));
       this.movieHighlight = this.itemsCollection.valueChanges();
       this.movieHighlight.subscribe(val => {
+        console.log('CARREGOU', val);
         this.movieHOME = val;
       });
     });
@@ -55,6 +59,7 @@ export class PlayerComponent implements OnInit {
     this.homeService.aClickedEvent.subscribe((movie: string) => {
       this.changePlayer(movie);
     });
+
   }
 
   public changePlayer(movie) {

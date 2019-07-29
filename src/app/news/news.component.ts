@@ -11,12 +11,11 @@ import { Observable } from 'rxjs';
 export class NewsComponent implements OnInit {
   news: any;
 
-  constructor(public homeService: HomeService) {}
+  constructor(public homeService: HomeService) { }
 
   ngOnInit() {
     this.homeService.NewsEvent.subscribe((news: Object) => {
       this.news = news;
-      console.log('ver', this.news);
     });
   }
 }

@@ -32,6 +32,7 @@ import { UserService } from './services/user.service';
 import { EditarComponent } from './painel/video/editar/editar.component';
 import { LogoutComponent } from './painel/logout/logout.component';
 import { TestComponent } from './test/test.component';
+import { SingleComponent } from './page/single/single.component';
 
 const appRoutes: Routes = [
   { path: 'painel/banner', component: BannerComponent },
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
   { path: 'painel/video/novo', component: EditarComponent },
   { path: 'painel/sair', component: LogoutComponent },
   { path: 'testandotudo/ola', component: TestComponent },
+  { path: 'video/:id', component: FrontendComponent },
   { path: '', component: FrontendComponent },
   { path: '**', component: P404Component }
 ];
@@ -62,7 +64,8 @@ const appRoutes: Routes = [
     VideosComponent,
     EditarComponent,
     LogoutComponent,
-    TestComponent
+    TestComponent,
+    SingleComponent
   ],
   imports: [
     BrowserModule,

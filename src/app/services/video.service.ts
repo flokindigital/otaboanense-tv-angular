@@ -68,6 +68,10 @@ export class VideoService {
     this.afs.doc<any>('home/mASRjAsNATTfPenPzpZI').update({ 'highlihgt': videoHome }).then(success => {
       Swal.fire('Sucesso', 'Home atualizada com sucesso', 'success');
     }
-    )
+    );
+  }
+
+  removeVideo(video: Video) {
+    this.afs.doc<Video>('/movies/' + video.id).delete();
   }
 }

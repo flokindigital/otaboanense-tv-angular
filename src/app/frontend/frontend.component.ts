@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'SPA-frontend',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FrontendComponent implements OnInit {
 
-  constructor() { }
+
+  @Input() id_video: string;
+
+  constructor(private route: ActivatedRoute) {
+    this.id_video = route.snapshot.paramMap.get('id');
+  }
 
   ngOnInit() {
   }

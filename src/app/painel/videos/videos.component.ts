@@ -4,6 +4,7 @@ import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'SPA-videos',
@@ -41,7 +42,13 @@ export class VideosComponent implements OnInit {
     this.router.navigate(['painel/videos']);
   }
 
-  remove(video) { }
+  remove(video: Video) {
+    Swal.fire({ title: 'Apagar Vídeo', text: 'Deseja realmente apagar este vídeo ?', type: 'info', showCancelButton: true, showCloseButton: true }).then(success => {
+      if (success.value) {
+        this.videoService.removeVideo(video);
+      }
+    });
+  }
 
   updateHome() {
     this.videoService.updateHome(this.videoHome);
