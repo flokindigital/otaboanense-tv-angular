@@ -8,6 +8,7 @@ import {
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Video } from '../model/video';
+import { Meta, Title } from '@angular/platform-browser';
 
 export interface Movie {
   name: string;
@@ -40,7 +41,9 @@ export class PlayerComponent implements OnInit {
   constructor(
     private afs: AngularFirestore,
     public sanitizer: DomSanitizer,
-    private homeService: HomeService
+    private homeService: HomeService,
+    private meta: Meta,
+    private title: Title
   ) {
     this.itemDoc = this.afs.doc<Home>('home/' + this.homeService.getHOME());
     this.item = this.itemDoc.valueChanges();
@@ -49,8 +52,14 @@ export class PlayerComponent implements OnInit {
       this.itemsCollection = this.afs.doc<Movie>('movies/' + (this.videoplayer != null ? this.videoplayer : val.highlihgt));
       this.movieHighlight = this.itemsCollection.valueChanges();
       this.movieHighlight.subscribe(val => {
-        console.log('CARREGOU', val);
         this.movieHOME = val;
+        const tags = {
+          description: val.description,
+          title: 'TV TABOANENSE • ' + val.name,
+          url: val.youtubeid,
+          image: 'https://img.youtube.com/vi/' + val.youtubeid + '/0.jpg'
+        }
+        this.setMetaData(tags);
       });
     });
   }
@@ -68,5 +77,23 @@ export class PlayerComponent implements OnInit {
     this.movieHighlight.subscribe(val => {
       this.movieHOME = val;
     });
+  }
+
+  setMetaData(data) {
+    this.title.setTitle(data.title);
+
+    // this.meta.updateTag({ 'name': 'keywords', 'content': data.keywords });
+    this.meta.updateTag({ 'name': 'description', 'content': data.description });
+    // this.meta.updateTag({ 'name': 'twitter:card', 'content': 'summary_large_image' });
+    // this.meta.updateTag({ 'name': 'twitter:title', 'content': data.title });
+    // this.meta.updateTag({ 'name': 'twitter:text:title', 'content': data.title });
+    // this.meta.updateTag({ 'name': 'twitter:description', 'content': data.description });
+    // this.meta.updateTag({ 'name': 'twitter:image', 'content': data.image });
+    // this.meta.updateTag({ 'name': 'twitter:image:alt', 'content': data.title });
+    this.meta.updateTag({ 'property': 'og:title', 'content': data.title });
+    this.meta.updateTag({ 'property': 'og:url', 'content': data.url });
+    this.meta.updateTag({ 'property': 'og:image', 'content': data.image });
+    this.meta.updateTag({ 'property': 'og:image:alt', 'content': data.title });
+    this.meta.updateTag({ 'property': 'og:description', 'content': data.description });
   }
 }
