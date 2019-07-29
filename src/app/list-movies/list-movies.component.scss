@@ -1,5 +1,5 @@
 .card {
-  // margin: .5em;
+  margin: 10px;
   // width: 16rem;
   border: none;
   transition: all 0.5s;
@@ -15,9 +15,9 @@
 }
 
 .card a.btn {
-  background: #f00;
-  border: 1px solid #f00;
-  color: #fff;
+  // background: #f00;
+  // border: 1px solid #f00;
+  // color: #fff;
 }
 
 .card:hover {
@@ -30,8 +30,8 @@
 
 .card-title {
   font-family: 'Open Sans';
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 1em;
 }
 
 .card-text {
@@ -48,7 +48,7 @@
 }
 
 .title {
-  font-size: 14px;
+  font-size: 1em;
   border-bottom: 2px solid #f00;
   padding-bottom: .5em;
   font-weight: 600;
@@ -63,10 +63,11 @@
 }
 
 .card {
-  filter: grayscale(1);
+  // filter: grayscale(1);
   min-width: 250px;
   margin: 3px;
-  height: 480px;
+  margin: 10px;
+  // height: 480px;
 }
 
 .card:hover {

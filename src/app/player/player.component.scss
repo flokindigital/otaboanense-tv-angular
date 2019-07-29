@@ -34,8 +34,8 @@ h1 {
 .date {
   font-size: 10px;
   margin-bottom: 2em;
-  background: #f00;
-  color: #fff;
+  border: 2px solid #f00;
+  color: #f00;
   padding: .5em;
   display: inline-block;
   border-radius: 4px;
@@ -46,8 +46,9 @@ h1 {
 }
 
 p {
-  line-height: 1.5em;
-  font-weight: 100;
+  line-height: 1.2em;
+  font-weight: 300;
+  font-size: 1.5em;
 }
 
 
