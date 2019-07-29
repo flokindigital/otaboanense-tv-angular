@@ -81,19 +81,11 @@ export class PlayerComponent implements OnInit {
 
   setMetaData(data) {
     this.title.setTitle(data.title);
-
-    // this.meta.updateTag({ 'name': 'keywords', 'content': data.keywords });
-    this.meta.updateTag({ 'name': 'description', 'content': data.description });
-    // this.meta.updateTag({ 'name': 'twitter:card', 'content': 'summary_large_image' });
-    // this.meta.updateTag({ 'name': 'twitter:title', 'content': data.title });
-    // this.meta.updateTag({ 'name': 'twitter:text:title', 'content': data.title });
-    // this.meta.updateTag({ 'name': 'twitter:description', 'content': data.description });
-    // this.meta.updateTag({ 'name': 'twitter:image', 'content': data.image });
-    // this.meta.updateTag({ 'name': 'twitter:image:alt', 'content': data.title });
-    this.meta.updateTag({ 'property': 'og:title', 'content': data.title });
-    this.meta.updateTag({ 'property': 'og:url', 'content': data.url });
-    this.meta.updateTag({ 'property': 'og:image', 'content': data.image });
-    this.meta.updateTag({ 'property': 'og:image:alt', 'content': data.title });
-    this.meta.updateTag({ 'property': 'og:description', 'content': data.description });
+    this.meta.updateTag({ name: 'description', content: data.description });
+    this.meta.updateTag({ property: 'og:title', content: data.title });
+    this.meta.updateTag({ property: 'og:url', content: data.url });
+    this.meta.updateTag({ property: 'og:image', content: data.image });
+    this.meta.updateTag({ property: 'og:image:alt', content: data.title });
+    this.meta.updateTag({ property: 'og:description', content: data.description });
   }
 }
