@@ -2,6 +2,10 @@
   color: black;
 }
 
+.card {
+  border: none;
+}
+
 .card a:hover {
   text-decoration: none;
 }
@@ -33,7 +37,7 @@
 
 
 .link {
-  margin-top: 1em;
+  margin-bottom: 1em;
   display: inline-block;
   text-transform: uppercase;
   background: #007bff;

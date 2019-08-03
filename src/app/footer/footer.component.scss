@@ -7,8 +7,8 @@
 }
 
 #myFooter .footer-copyright {
-  background-color: #ececec;
-  padding-top: 3px;
+  border-top: 1px solid #0000000d;
+  padding-top: 9px;
   padding-bottom: 3px;
   text-align: center;
 }
@@ -18,7 +18,7 @@
 }
 
 #myFooter .row {
-  margin-bottom: 60px;
+  // margin-bottom: 60px;
 }
 
 #myFooter .navbar-brand {
@@ -28,7 +28,7 @@
 
 #myFooter .footer-copyright p {
   margin: 10px;
-  color: #8f8f8f;
+  color: black;
 }
 
 #myFooter ul {
