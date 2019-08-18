@@ -1,6 +1,6 @@
 import { VideosComponent } from './painel/videos/videos.component';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
+import { BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -50,7 +50,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [
-    
+
     AppRoutingModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
