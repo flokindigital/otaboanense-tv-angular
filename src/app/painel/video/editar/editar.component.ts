@@ -1,9 +1,9 @@
+import { YoutubeAPI } from './../../../model/youtube';
 import { Video } from './../../../model/video';
 import { VideoService } from './../../../services/video.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClientModule, HttpClientJsonpModule, HttpClient } from '@angular/common/http';
-import { YoutubeAPI } from 'src/app/model/youtube';
 import { formatDate } from '@angular/common';
 
 const API = "https://noembed.com/embed?url=https://www.youtube.com/watch?v=";

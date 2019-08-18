@@ -1,6 +1,6 @@
 import { VideosComponent } from './painel/videos/videos.component';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,9 +33,7 @@ import { EditarComponent } from './painel/video/editar/editar.component';
 import { LogoutComponent } from './painel/logout/logout.component';
 import { TestComponent } from './test/test.component';
 import { SingleComponent } from './page/single/single.component';
-import { CommonModule } from '@angular/common';
-import { TransferHttpCacheModule } from '@nguniversal/common';
-import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { AppModule } from './app.module';
 
 const appRoutes: Routes = [
   { path: 'painel/banner', component: BannerComponent },
@@ -51,27 +49,8 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    PlayerComponent,
-    AdComponent,
-    ListMoviesComponent,
-    FooterComponent,
-    BannerComponent,
-    FrontendComponent,
-    P404Component,
-    DestaqueComponent,
-    NewsComponent,
-    LoginComponent,
-    VideosComponent,
-    EditarComponent,
-    LogoutComponent,
-    TestComponent,
-    SingleComponent
-  ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    
     AppRoutingModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
@@ -83,11 +62,10 @@ const appRoutes: Routes = [
       adClient: 'ca-pub-5073402446734231',
       adSlot: 8385261178
     }),
-    CommonModule,
-    TransferHttpCacheModule,
-    NgtUniversalModule
+    AppModule,
+    BrowserTransferStateModule
   ],
   providers: [UserService, HomeService, AngularFireAuth],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppBrowserModule { }
